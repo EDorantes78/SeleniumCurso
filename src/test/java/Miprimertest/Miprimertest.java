@@ -50,9 +50,31 @@ public class Miprimertest
         bottonCompras.click();
         Thread.sleep(5000);*/
 
-        WebElement buttonCompras = driver.findElement(By.xpath("//span[@id='nav-cart-count']"));
+        //UTILIZANDO XPATH CON TAG (tag: span, img, button, input, select) Y UN ATRIBUTO
+        /*WebElement buttonCompras = driver.findElement(By.xpath("//span[@id='nav-cart-count']"));
         buttonCompras.click();
+        Thread.sleep(5000);*/
+
+        //UTILIZANDO XPATH POR CONTAINS USANDO "*", EL ASTERISCO SE PUEDE REEMPLAZAR POR EL TAG O TIPO DE ELEMENTO
+        /*WebElement cuentaYListas = driver.findElement(By.xpath("//*[contains(text(), 'Cuenta y Listas')]"));
+        cuentaYListas.click();
+        Thread.sleep(5000);*/
+
+        //USO DE XPATH CON MULTIPLES ATRIBUTOS
+        /*WebElement inputBusqueda = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox' and @dir='auto']"));
+        inputBusqueda.click();
+        inputBusqueda.clear();
+        inputBusqueda.sendKeys("Celulares");
+        inputBusqueda.submit();*/
+
+        //USO DE XPATH POR RELATIONSHIP
+        WebElement inputBusqueda = driver.findElement(By.xpath("//div/input[@id='twotabsearchtextbox' and @dir='auto']"));
+        inputBusqueda.click();
+        inputBusqueda.clear();
+        inputBusqueda.sendKeys("Celulares");
+        inputBusqueda.submit();
         Thread.sleep(5000);
+
 
     }
 
