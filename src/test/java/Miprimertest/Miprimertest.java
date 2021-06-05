@@ -27,6 +27,7 @@ public class Miprimertest
         //ENVIA LA DIRECCION DEL SISTEMA AL NAVEGADOR
         driver.get("https://www.amazon.com.mx/");
     }
+    /*
     @Test
     public void testAmazon () throws InterruptedException
     {
@@ -38,8 +39,23 @@ public class Miprimertest
         WebElement bottontLupa = driver .findElement(By.id("nav-search-submit-button"));
         bottontLupa.click();
         Thread.sleep(4000);
+    }
+*/
+
+        @Test
+        public void usoXpath () throws InterruptedException
+    {
+        //ESTE XPATH ES ABSOLUTO, POR BUENAS PRACTICAS NO SE DEBE DE UTILIZAR
+        /*WebElement bottonCompras = driver.findElement(By.xpath("/html/body/div[1]/header/div/div[1]/div[3]/div/a[3]/div[2]/span[2]"));
+        bottonCompras.click();
+        Thread.sleep(5000);*/
+
+        WebElement buttonCompras = driver.findElement(By.xpath("//span[@id='nav-cart-count']"));
+        buttonCompras.click();
+        Thread.sleep(5000);
 
     }
+
     @After
     public void tearDown()
     {
