@@ -2,37 +2,32 @@ package Common;
 
 import Elements.ElementsLogin;
 import Features.Login;
+import Utils.SeleniumUtils;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
 
 public class BaseTest
 {
     //***********INSTANCIAS************
     public static WebDriver driver = null;
     Login login = new Login();
-    ElementsLogin elementsLogin= new ElementsLogin();
 
     @Before
-    public void Login () throws Exception
+    public void Login (WebDriver driver) throws Exception
 
     {
         //Crear driver
         driver = Config.navegadorChrome();
+
+        //MAXIMIZA VENTANA
         driver.manage().window().maximize();
+
+        //LA FUNCION "driver.get", NOS SIRVA PARA MANDAR LA URL AL NAVEGADOR
         driver.get(Config.URL_QA);
+
+        //POR MEDIO DEL OBJECT "login", MANDAMOS TRAER (INSTANCIAMOS) EL PROCESO DE INICIAR SESION
         login.miLogin(driver);
 
         //IMPLICIT WAIT
@@ -64,7 +59,7 @@ public class BaseTest
     @After
     public void tearDown()
     {
-        //Cierra el navegador
+        //LA FUNCION "driver.quit" NOS SIRVE PARA CERRAR EL NAVEGADOR
         driver.quit();
     }
 

@@ -16,7 +16,7 @@ public class Login
     SeleniumUtils utils = new SeleniumUtils();
     Config config = new Config();
 
-    public void miLogin (WebDriver driver) throws InterruptedException
+    public void miLogin (WebDriver driver) throws Exception
     {
         Thread.sleep(2000);
 
@@ -24,9 +24,11 @@ public class Login
         utils.ClickButton(elementsLogin.ButtonSignin(driver));
         Thread.sleep(2000);
 
+        //SE REALIZA DESPLAZAMIENTO DE LA PARTE INFERIOR
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy (0,350)");
         Thread.sleep(2000);
+        utils.loading(driver, 4000);
 
         //SE DA CLIC Y SE LLENA EL USUARIO
         utils.ClickButton(elementsLogin.InputUser(driver));
@@ -41,5 +43,24 @@ public class Login
         WebElement buttonSignIn = driver.findElement(By.id("SubmitLogin"));
         buttonSignIn.click();
         Thread.sleep(2000);
+    }
+    public void cerrarSesion (WebDriver driver)
+    {
+        //NOTA DE ESTUDIO
+        /*
+        EN CADA CLASE DE FEATURES PODEMOS COLOCAR MULTIPLES FUNCIONALIDADES
+        ES INDISPENSABLE CONTAR PRIMERO CON LOS ELEMENTOS WEB
+        POR EJEMPLO: DENTRO DE ESTE METODO PODEMOS DESARROLLAR EL PASO A PASO DE CERRAR SESION
+         */
+
+    }
+    public void olvideCOntrasena (WebDriver driver)
+    {
+
+    }
+
+    public void loginIncorrecto (WebDriver driver)
+    {
+
     }
 }
