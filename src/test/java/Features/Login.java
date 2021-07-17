@@ -14,9 +14,9 @@ public class Login
     //INSTANCIAS
     ElementsLogin elementsLogin = new ElementsLogin();
     SeleniumUtils utils = new SeleniumUtils();
-    Config config = new Config();
+    private WebDriver driver;
 
-    public void miLogin (WebDriver driver) throws Exception
+    public void miLogin (WebDriver driver) throws InterruptedException
     {
         Thread.sleep(2000);
 
@@ -28,7 +28,6 @@ public class Login
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy (0,350)");
         Thread.sleep(2000);
-        utils.loading(driver, 4000);
 
         //SE DA CLIC Y SE LLENA EL USUARIO
         utils.ClickButton(elementsLogin.InputUser(driver));
