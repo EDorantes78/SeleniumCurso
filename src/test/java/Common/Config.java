@@ -8,6 +8,7 @@ public class Config
 {
     public static String URL_QA = "http://automationpractice.com/index.php";
     public static String URL_Dev = "http://automationpractice.com/index.php";
+    public static String URL_DRAGANDDROP = "https://jqueryui.com/droppable/";
     public static String user = "test.0@test.com";
     public static String password = "test1234";
 
