@@ -1,9 +1,8 @@
-package Features;
+package Common;
 
 import Common.Config;
 import Elements.ElementsLogin;
 import Utils.SeleniumUtils;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

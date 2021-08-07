@@ -1,11 +1,8 @@
 package Common;
 
-import Elements.ElementsLogin;
-import Features.Login;
-import Utils.SeleniumUtils;
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,7 +13,7 @@ public class BaseTest
     protected static WebDriver driver = null;
     Login login = new Login();
 
-    @Before
+    @BeforeTest
     public void Login () throws Exception
 
     {
@@ -35,7 +32,7 @@ public class BaseTest
 
     }
 
-    @After
+    @AfterTest
     public void tearDown()
     {
         //LA FUNCION "driver.quit" NOS SIRVE PARA CERRAR EL NAVEGADOR

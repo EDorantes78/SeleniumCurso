@@ -2,11 +2,10 @@ package Features;
 
 import Common.BaseTest;
 import Utils.SeleniumUtils;
-import jdk.jshell.execution.Util;
-import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 public class Alertas extends BaseTest
 {

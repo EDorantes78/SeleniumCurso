@@ -1,17 +1,17 @@
 package Features;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class Miprimertest
 {
     private WebDriver driver;
-    @Before
+    @BeforeTest
     public void setUp()
     {
         //SE COLOCA LA DIRECCIÓN DEL DRIVER, SEA CHROME, MOZILLA O EDGE
@@ -77,7 +77,7 @@ public class Miprimertest
 
     }
 
-    @After
+    @AfterTest
     public void tearDown()
     {
 
